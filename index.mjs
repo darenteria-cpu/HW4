@@ -5,22 +5,23 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+app.get('/language', async (req, res) => {
+  let languageName = req.query.languageName;
+  let languageInfo = pldb.find(l => l.id === languageName);
+
+  //web api
+  let pageName = languageInfo.wikipedia.split('/wiki/')[1];
+  let response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${pageName}`,
+   { headers: { 'User-Agent': 'CST336-HW4 (student project)' } });
+  let data = await response.json();
+  res.render(languageName, { languageInfo, data });
+});
+
 app.get('/', (req, res) => {
-   res.render('index')
+  res.render('index');
 });
 
-app.listen(3000, () => {
-   console.log('server started');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
-
-const topLanguages = pldb
-  .filter(l => l.primaryTag === 'pl' && l.rank)
-  .sort((a, b) => a.rank - b.rank)
-  .slice(0, 5);
-
-console.table(topLanguages.map(l => ({
-  rank: l.rank,
-  name: l.name,
-  id: l.id,
-  appeared: l.appeared
-})));

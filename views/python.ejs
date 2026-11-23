@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <main class="language-page">
+        <div class="name-column">
+        <h1><%= languageInfo.name %></h1>
+        <img src="<%= data.thumbnail.source %>" class="photo">
+        </div>        
+        <div>
+        <p><strong>Appeared: </strong><%= languageInfo.appeared %></p>
+        <p><strong>Created by: </strong><%= languageInfo.creators %></p>
+        <p><strong>Country created in: </strong><%= languageInfo.country %></p>
+        <p><strong>Latest Version: </strong><%= languageInfo.latestVersion %></p>
+        </div>
+        <div class="summary">
+        <p><strong>Summary: </strong><%= data.extract %></p>
+        </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

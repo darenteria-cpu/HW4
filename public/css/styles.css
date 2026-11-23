@@ -1,0 +1,121 @@
+.homePic {
+    width: 500px;
+    height: auto;
+    margin-top: 20px;
+}
+
+body {
+        margin: 0;
+        background-color: #b3ece9;
+        color: black;
+        font-family: "Arial", sans-serif;
+}
+
+header {
+        text-align: center;
+        padding: 40px 20px;
+}
+
+header h1 {
+        margin: 0;
+        font-family: "Georgia", serif;
+        font-size: 48px;
+}
+
+hr {
+        border: none;
+        border-top: 2px solid black;
+        margin: 0;
+}
+
+nav {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 22px;
+}
+
+nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 22px;
+        margin: 0 20px;
+        display: inline-block;
+}
+
+nav a:hover {
+    animation: wiggle 0.4s ease-in-out infinite,
+               colorswitch 0.8s steps(1) infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+@keyframes colorswitch {
+    0% { color: red; }
+    50% { color: blue; }
+}
+
+/*side by side*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+/*2 columns*/
+.language-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.language-page h1 {
+    text-align: center;
+    font-family: "Georgia", serif;
+    font-size: 48px;
+}
+
+.language-page .summary {
+    grid-column: 1 / -1;  /*this makes the 2nd row span across the entire 2 column grid*/
+}
+
+.name-column {
+    text-align: center;
+}
+
+.photo {
+    width: 150px;
+    height: auto;
+}
+
+.welcome {
+    max-width: 450px;
+    text-align: center;
+    font-size: 18px;
+}
+
+footer {
+        text-align: center;
+        padding: 20px;
+        color: rgb(122, 14, 0);
+        font-size: 14px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+.logo {
+        text-align: center;
+        width: 225px;
+        margin-top: 5px;
+}
