@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <main>
+        <div class="compare">
+        <h1>Compare The Info Provided</h1>
+        <table>
+            <tr>
+                <th>Language</th>
+                <th>Appeared</th>
+                <th>Creator</th>
+                <th>Country</th>
+            </tr>
+            <% languages.forEach(lang => { %>
+            <tr>
+                <td><%= lang.name %></td>
+                <td><%= lang.appeared %></td>
+                <td><%= lang.creators %></td>
+                <td><%= lang.country %></td>
+            </tr>
+            <% }) %>
+        </table>
+        </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

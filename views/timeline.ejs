@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <main class="timeline">
+        <div>
+            <h1>Timeline</h1>
+            <% languages.forEach(lang => { %>
+                <div class="timeline-item">
+                    <h2><%= lang.appeared %></h2>
+                    <p><strong><%= lang.name %></strong> was created by <%= lang.creators %>
+                       in <%= lang.country %>.</p>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <main class="about">
+        <div>
+            <h1>About This Site</h1>
+            <p>This site gives an overview of five widely used programming languages:
+               JavaScript, C, Python, Java and C++.</p>
+
+            <h2>Data Sources</h2>
+            <p><strong>Node package:</strong>
+               <a href="https://www.npmjs.com/package/pldb">pldb</a>
+               (Programming Language Database) provides each language's year, creator,
+               country and latest version.</p>
+            <p><strong>Web API:</strong> The
+               <a href="https://www.mediawiki.org/wiki/Page_Content_Service">Wikipedia REST API</a>
+               provides each language's summary and image.</p>
+
+            <h2>Built With</h2>
+            <p>Node.js, Express, EJS templates and partials, and an external CSS stylesheet.</p>
+            <p>Hosted on Render</p>
+
+        </div>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
